@@ -278,7 +278,6 @@
             <p id="explicacion"></p>
         </div>
         
-        <!-- Sección Forma de Trabajo -->
         <div>
             <h2>Forma de Trabajo</h2>
             <p id="trabajo"></p>
@@ -309,8 +308,36 @@
                 explicacion.textContent = "";
             }
             
-            // Actualizar la descripción del trabajo de acuerdo al tipo de servicio
-            trabajo.textContent = `Forma de trabajo para ${tipoServicio.value}`;
+        });
+
+         nicho.addEventListener("change", () => {
+            if (nicho.value === "Belleza B2B") {
+                trabajo.textContent = "Forma de trabajo para Belleza B2B";
+            } else if (nicho.value === "Belleza B2C") {
+                trabajo.textContent = "Forma de trabajo para Belleza B2C";
+            } else if (nicho.value === "Energía B2B") {
+                trabajo.textContent = "Forma de trabajo para Energía B2B";
+            } else if (nicho.value === "Energía B2C") {
+                trabajo.textContent = "Forma de trabajo para Energía B2C";
+            } else if (nicho.value === "Servicios Informáticos B2B") {
+                trabajo.textContent = "Forma de trabajo para Servicios Informáticos B2B";
+            } else if (nicho.value === "Infoproducto") {
+                trabajo.textContent = "Forma de trabajo para Infoproducto";
+            } else if (nicho.value === "Tours") {
+                trabajo.textContent = "Forma de trabajo para Tours";
+            } else if (nicho.value === "Clínicas Dentales") {
+                trabajo.textContent = "Forma de trabajo para Clínicas Dentales";
+            } else if (nicho.value === "Agencia de Viajes") {
+                trabajo.textContent = "Forma de trabajo para Agencia de Viajes";
+            } else if (nicho.value === "Reparación e Instalación") {
+                trabajo.textContent = "Forma de trabajo para Reparación e Instalación";
+            } else if (nicho.value === "Mudanzas") {
+                trabajo.textContent = "Forma de trabajo para Mudanzas";
+            } else if (nicho.value === "Inmobiliaria") {
+                trabajo.textContent = "Forma de trabajo para Inmobiliaria";
+            } else {
+                trabajo.textContent = "";
+            }
         });
 </script>
 </body>
