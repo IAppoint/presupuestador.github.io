@@ -79,7 +79,7 @@
     animation: moverEjemplos 100s linear infinite;
 }
 
-        .ejemplo {
+       .ejemplo {
             width: calc(100% / 3);
             flex-shrink: 0;
             padding: 20px;
@@ -88,6 +88,27 @@
             background-color: #f0f0f0;
             border-radius: 10px;
             margin: 0 10px;
+        }
+
+        /* Estilos para la imagen en los ejemplos */
+        .ejemplo img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        /* Estilos para la tabla en los ejemplos */
+        .ejemplo table {
+            border: 1px solid #ccc;
+        }
+
+        /* Estilos para las filas de la tabla en los ejemplos */
+        .ejemplo table tr {
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* Estilos para las celdas de la tabla en los ejemplos */
+        .ejemplo table td {
+            padding: 8px;
         }
 
         @keyframes moverEjemplos {
