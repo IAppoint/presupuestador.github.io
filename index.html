@@ -74,10 +74,10 @@
         }
 
         .ejemplos-container {
-            display: flex;
-            width: 600%;
-            animation: moverEjemplos 20s linear infinite;
-        }
+    display: flex;
+    width: max-content;
+    animation: moverEjemplos 100s linear infinite;
+}
 
         .ejemplo {
             width: calc(100% / 3);
@@ -91,13 +91,13 @@
         }
 
         @keyframes moverEjemplos {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-400%);
-            }
-        }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
         footer {
             text-align: center;
