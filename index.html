@@ -273,11 +273,45 @@
             </div>
         </div>
     </main>
-    
+     <div>
+            <h1>¿Cómo funciona nuestro servicio?</h1>
+            <p id="explicacion"></p>
+        </div>
+        
+        <!-- Sección Forma de Trabajo -->
+        <div>
+            <h2>Forma de Trabajo</h2>
+            <p id="trabajo"></p>
+        </div>
     <footer>
         <p>Derechos de Autor &copy; 2023 IAPPOINT. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module">
+          const explicacion = document.getElementById("explicacion");
+        const trabajo = document.getElementById("trabajo");
+        const tipoServicio = document.getElementById("servicio");
+        
+        tipoServicio.addEventListener("change", () => {
+            if (tipoServicio.value === "Landing Page (No code)") {
+                explicacion.textContent = "Se trata de la creación de una landing page de alta conversión por profesionales de tu sector. Establecerán la estructura de la página si contemplan poner botón de Whatsapp, Link de Calendly y más componentes.";
+            } else if (tipoServicio.value === "Landing Page (Code)") {
+                explicacion.textContent = "Descripción para Landing Page (Code).";
+            } else if (tipoServicio.value === "Botón de Chat con IA Standar") {
+                explicacion.textContent = "Descripción para Botón de Chat con IA Standar.";
+            } else if (tipoServicio.value === "Botón de Chat con IA Standar + 1 Proceso automático") {
+                explicacion.textContent = "Descripción para Botón de Chat con IA Standar + 1 Proceso automático.";
+            } else if (tipoServicio.value === "Pack i-Sales (2 Meses)") {
+                explicacion.textContent = "Descripción para Pack i-Sales (2 Meses).";
+            } else if (tipoServicio.value === "Pack i-Sales Pro (2 Meses)") {
+                explicacion.textContent = "Descripción para Pack i-Sales Pro (2 Meses).";
+            } else {
+                explicacion.textContent = "";
+            }
+            
+            // Actualizar la descripción del trabajo de acuerdo al tipo de servicio
+            trabajo.textContent = `Forma de trabajo para ${tipoServicio.value}`;
+        });
+</script>
 </body>
 </html>
