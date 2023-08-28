@@ -24,13 +24,11 @@
         }
 
         main {
-            flex: 1;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            justify-content: center;
+            height: 100vh;
         }
 
         form {
@@ -63,6 +61,40 @@
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+        }
+
+
+.previsualizacion {
+            margin-top: 30px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ejemplos-container {
+            display: flex;
+            width: 600%;
+            animation: moverEjemplos 20s linear infinite;
+        }
+
+        .ejemplo {
+            width: calc(100% / 3);
+            flex-shrink: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        @keyframes moverEjemplos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-400%);
+            }
         }
 
         footer {
@@ -107,6 +139,34 @@
             
             <button type="submit">Obtener Presupuesto</button>
         </form>
+         <div class="previsualizacion">
+            <div class="ejemplos-container">
+                <div class="ejemplo">
+                    <h3>Ejemplo 1</h3>
+                    <p>Descripción del ejemplo 1</p>
+                </div>
+                <div class="ejemplo">
+                    <h3>Ejemplo 2</h3>
+                    <p>Descripción del ejemplo 2</p>
+                </div>
+                <div class="ejemplo">
+                    <h3>Ejemplo 3</h3>
+                    <p>Descripción del ejemplo 3</p>
+                </div>
+                <div class="ejemplo">
+                    <h3>Ejemplo 4</h3>
+                    <p>Descripción del ejemplo 4</p>
+                </div>
+                <div class="ejemplo">
+                    <h3>Ejemplo 5</h3>
+                    <p>Descripción del ejemplo 5</p>
+                </div>
+                <div class="ejemplo">
+                    <h3>Ejemplo 6</h3>
+                    <p>Descripción del ejemplo 6</p>
+                </div>
+            </div>
+        </div>
     </main>
     
     <footer>
