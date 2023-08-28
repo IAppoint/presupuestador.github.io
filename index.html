@@ -79,7 +79,7 @@
     </header>
     
     <main>
-        <form id="presupuestadorForm">
+         <form id="presupuestadorForm">
             <label for="nicho">Nicho:</label>
             <input type="text" id="nicho" name="nicho" required>
             
@@ -92,7 +92,15 @@
             </select>
             
             <label for="servicio">Servicio:</label>
-            <input type="text" id="servicio" name="servicio" required>
+            <select id="servicio" name="servicio" required>
+                <option value="">Seleccionar</option>
+                <option value="Landing Page (No code)">Landing Page (No code)</option>
+                <option value="Landing Page (Code)">Landing Page (Code)</option>
+                <option value="Botón de Chat con IA Standar">Botón de Chat con IA Standar</option>
+                <option value="Botón de Chat con IA Standar + 1 Proceso automático">Botón de Chat con IA Standar + 1 Proceso automático</option>
+                <option value="Pack i-Sales (2 Meses)">Pack i-Sales (2 Meses)</option>
+                <option value="Pack i-Sales Pro (2 Meses)">Pack i-Sales Pro (2 Meses)</option>
+            </select>
             
             <label for="plazo">Plazo del Servicio:</label>
             <input type="text" id="plazo" name="plazo" required>
