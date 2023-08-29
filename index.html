@@ -364,29 +364,50 @@
     </footer>
 
     <script type="module">
-          const explicacion = document.getElementById("explicacion");
-        const trabajo = document.getElementById("trabajo");
-        const tipoServicio = document.getElementById("servicio");
-        
-        tipoServicio.addEventListener("change", () => {
-            if (tipoServicio.value === "Landing Page (No code)") {
-                explicacion.textContent = "Se trata de la creación de una landing page de alta conversión por profesionales de tu sector. Establecerán la estructura de la página si contemplan poner botón de Whatsapp, Link de Calendly y más componentes.";
-            } else if (tipoServicio.value === "Landing Page (Code)") {
-                explicacion.textContent = "Descripción para Landing Page (Code).";
-            } else if (tipoServicio.value === "Botón de Chat con IA Standar") {
-                explicacion.textContent = "Descripción para Botón de Chat con IA Standar.";
-            } else if (tipoServicio.value === "Botón de Chat con IA Standar + 1 Proceso automático") {
-                explicacion.textContent = "Descripción para Botón de Chat con IA Standar + 1 Proceso automático.";
-            } else if (tipoServicio.value === "Pack i-Sales (2 Meses)") {
-                explicacion.textContent = "Descripción para Pack i-Sales (2 Meses).";
-            } else if (tipoServicio.value === "Pack i-Sales Pro (2 Meses)") {
-                explicacion.textContent = "Descripción para Pack i-Sales Pro (2 Meses).";
-            } else {
-                explicacion.textContent = "";
-            }
-            
-        });
+        const explicacion = document.getElementById("explicacion");
+    const trabajo = document.getElementById("trabajo");
+    const tipoServicio = document.getElementById("servicio");
 
+    tipoServicio.addEventListener("change", () => {
+        if (tipoServicio.value === "Landing Page (No code)") {
+            explicacion.textContent = "Se trata de la creación de una landing page de alta conversión por profesionales de tu sector. Establecerán la estructura de la página si contemplan poner botón de Whatsapp, Link de Calendly y más componentes.";
+        } else if (tipoServicio.value === "Landing Page (Code)") {
+            explicacion.textContent = "Descripción para Landing Page (Code).";
+        } else if (tipoServicio.value === "Botón de Chat con IA Standar") {
+            explicacion.textContent = "Descripción para Botón de Chat con IA Standar.";
+        } else if (tipoServicio.value === "Botón de Chat con IA Standar + 1 Proceso automático") {
+            explicacion.textContent = "Descripción para Botón de Chat con IA Standar + 1 Proceso automático.";
+        } else if (tipoServicio.value === "Pack i-Sales (2 Meses)") {
+            // Limpiar la explicación actual
+            explicacion.innerHTML = "";
+
+            // Crear la estructura HTML para el nuevo contenido
+            const servicioDiv = document.createElement("div");
+            servicioDiv.classList.add("servicio");
+            servicioDiv.innerHTML = `
+                <p>Nuestro Servicio va desde la generación de Clientes Potenciales al seguimiento de los Leads hasta convertirse en clientes. <br> 
+                Nuestro servicio es un servicio integral completo</p>
+                <p>Incluye</p>
+                <ul>
+                    <li>Calendario de ventas semana a semana.</li>
+                    <li>Flujos de ventas por cada canal.</li>
+                    <li>Textos y ganchos desarrollados.</li>
+                    <li>Set Up Publicitaria Facebook, Google o Linkedin.</li>
+                    <li>Setup CRM.</li>
+                    <li>Creación de creativos y copys.</li>
+                    <li>Vídeos e imágenes para anuncios.</li>
+                    <li>Seguimiento diario con el equipo comercial.</li>
+                    <li>2 reuniones de status publicitario y cualificación del lead.</li>
+                    <li>1 campaña de email marketing y flujo para exprimir la base de datos.</li>
+                </ul>
+            `;
+
+            // Agregar el nuevo contenido al elemento explicacion
+            explicacion.appendChild(servicioDiv);
+        } else {
+            explicacion.textContent = "";
+        }
+    });
          nicho.addEventListener("change", () => {
             if (nicho.value === "Belleza B2B") {
                 trabajo.textContent = "El sector de la belleza es un sector muy competitivo. Si vendes productos a Centros Estéticos estás de suerte porque es un sector que en B2B no está bien explota y puedes conseguir Costes por Cliente Potencial de 2€ , Como nuestro Cliente Preso Vital que consiguió 300 Leads por un coste total de 600€, para vender un producto de neuro estimulación facial de ticket de 5000€. ";
