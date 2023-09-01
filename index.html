@@ -562,7 +562,7 @@
 
 // Agregamos un manejador de eventos para el botón de cierre del modal
 const closeModalButton = document.getElementById("closeModa2");
-closeModa2Button.addEventListener("click", closeModa2);
+closeModa1Button.addEventListener("click", closeModa2);
 
         // Agregamos un manejador de eventos para el formulario
         document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
@@ -571,23 +571,22 @@ closeModa2Button.addEventListener("click", closeModa2);
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
 
-            // Aquí puedes realizar cualquier acción que desees con los datos del formulario
-            // Por ejemplo, puedes enviar los datos a un servidor o procesarlos de alguna manera
+                       // Enviar el formulario por correo electrónico usando EmailJS
+            emailjs.send("service_2b9m5ed", "template_bku9ps9", {
+                nombre: nombre,
+                telefono: telefono,
+            })
+            .then(function(response) {
+                console.log("Correo electrónico enviado con éxito", response);
+            }, function(error) {
+                console.error("Error al enviar el correo electrónico", error);
+            });
 
             // Después de procesar los datos, cierra el modal
             closeModal();
         });
 
-// Enviar el formulario por correo electrónico usando EmailJS
-emailjs.send("service_2b9m5ed", "template_bku9ps9", {
-    nombre: nombre,
-    telefono: telefono,
-})
-.then(function(response) {
-    console.log("Correo electrónico enviado con éxito", response);
-}, function(error) {
-    console.error("Error al enviar el correo electrónico", error);
-});
+
         
 </script>
 </body>
