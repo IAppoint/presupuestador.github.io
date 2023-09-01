@@ -325,7 +325,7 @@
                 <input type="text" id="nombre" name="nombre" required>
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono" required>
-                <button type="submit">Enviar</button>
+                <button type="submit" id="closeModa2">Enviar</button>
             </div>
         </div>
          <div class="previsualizacion">
@@ -561,8 +561,8 @@
 }
 
 // Agregamos un manejador de eventos para el botón de cierre del modal
-const closeModalButton = document.getElementById("closeModal");
-closeModalButton.addEventListener("click", closeModal);
+const closeModalButton = document.getElementById("closeModa2");
+closeModa2Button.addEventListener("click", closeModa2);
 
         // Agregamos un manejador de eventos para el formulario
         document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
