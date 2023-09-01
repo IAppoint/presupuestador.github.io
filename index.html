@@ -263,7 +263,7 @@
         </form>
          <div class="modal" id="myModal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
+                 <span class="close" id="closeModal">&times;</span>
                 <h2>Solicitar Presupuesto</h2>
                 <p>Por favor, introduce tu nombre completo y número de teléfono para recibir tu presupuesto:</p>
                 <label for="nombre">Nombre Completo:</label>
@@ -495,11 +495,14 @@
             modal.style.display = "block";
         }
 
-        // Función para cerrar el modal
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
+      function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Agregamos un manejador de eventos para el botón de cierre del modal
+const closeModalButton = document.getElementById("closeModal");
+closeModalButton.addEventListener("click", closeModal);
 
         // Agregamos un manejador de eventos para el formulario
         document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
