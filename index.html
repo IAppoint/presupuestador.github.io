@@ -469,9 +469,13 @@
     })();
 </script>
     <script type="module">
-        const explicacion = document.getElementById("explicacion");
+      const explicacion = document.getElementById("explicacion");
     const trabajo = document.getElementById("trabajo");
     const tipoServicio = document.getElementById("servicio");
+    const presupuestadorForm = document.getElementById("presupuestadorForm");
+    const closeModalButton = document.getElementById("closeModalButton");
+    const closeModalSpan = document.getElementById("closeModal");
+    const modal = document.getElementById("myModal"); 
 
     tipoServicio.addEventListener("change", () => {
         if (tipoServicio.value === "Landing Page (No code)") {
