@@ -270,7 +270,7 @@
                 <input type="text" id="nombre" name="nombre" required>
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono" required>
-                <button type="submit" onclick="submitForm()">Enviar</button>
+                <button type="submit">Enviar</button>
             </div>
         </div>
          <div class="previsualizacion">
@@ -485,8 +485,7 @@
 
 
 
-         // Función para abrir el modal
-        function openModal() {
+          function openModal() {
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
         }
@@ -497,8 +496,10 @@
             modal.style.display = "none";
         }
 
-        // Función para enviar el formulario (puedes personalizar esto)
-        function submitForm() {
+        // Agregamos un manejador de eventos para el formulario
+        document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe normalmente
+
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
 
@@ -507,7 +508,7 @@
 
             // Después de procesar los datos, cierra el modal
             closeModal();
-        }
+        });
 </script>
 </body>
 </html>
