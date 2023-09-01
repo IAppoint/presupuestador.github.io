@@ -316,16 +316,16 @@
             </select>
             <button type="submit" id="obtenerPresupuestoButton">Obtener Presupuesto</button>
         </form>
-         <div class="modal" id="myModal">
+        <div class="modal" id="myModal">
             <div class="modal-content">
-                 <span class="close" id="closeModal">&times;</span>
+                <span class="close" id="closeModal">&times;</span>
                 <h2>Solicitar Presupuesto</h2>
                 <p>Por favor, introduce tu nombre completo y número de teléfono para recibir tu presupuesto:</p>
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono" required>
-                <button type="submit" id="closeModal2">Enviar</button>
+                <button type="button" id="closeModalButton">Enviar</button>
             </div>
         </div>
          <div class="previsualizacion">
@@ -560,18 +560,22 @@
     modal.style.display = "none";
 }
 
-// Agregamos un manejador de eventos para el botón de cierre del modal
-const closeModalButton = document.getElementById("closeModa2");
-closeModalButton.addEventListener("click", closeModal);
+
+
+     
+
+ // Agregamos un manejador de eventos para el botón de cierre del modal
+        const closeModalButton = document.getElementById("closeModalButton");
+        closeModalButton.addEventListener("click", closeModal);
 
         // Agregamos un manejador de eventos para el formulario
         document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evitar que el formulario se envíe normalmente
+            event.preventDefault();
 
             var nombre = document.getElementById("nombre").value;
             var telefono = document.getElementById("telefono").value;
 
-                       // Enviar el formulario por correo electrónico usando EmailJS
+               // Enviar el formulario por correo electrónico usando EmailJS
             emailjs.send("service_2b9m5ed", "template_bku9ps9", {
                 nombre: nombre,
                 telefono: telefono,
@@ -582,11 +586,8 @@ closeModalButton.addEventListener("click", closeModal);
                 console.error("Error al enviar el correo electrónico", error);
             });
 
-            // Después de procesar los datos, cierra el modal
             closeModal();
         });
-
-
         
 </script>
 </body>
