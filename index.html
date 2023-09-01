@@ -462,7 +462,12 @@
     <footer>
         <p>Derechos de Autor &copy; 2023 IAPPOINT. Todos los derechos reservados.</p>
     </footer>
-
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("vD8AirUimJoqPvHvw");
+    })();
+</script>
     <script type="module">
         const explicacion = document.getElementById("explicacion");
     const trabajo = document.getElementById("trabajo");
@@ -572,6 +577,18 @@ closeModalButton.addEventListener("click", closeModal);
             // Después de procesar los datos, cierra el modal
             closeModal();
         });
+
+// Enviar el formulario por correo electrónico usando EmailJS
+emailjs.send("service_2b9m5ed", "template_bku9ps9", {
+    nombre: nombre,
+    telefono: telefono,
+})
+.then(function(response) {
+    console.log("Correo electrónico enviado con éxito", response);
+}, function(error) {
+    console.error("Error al enviar el correo electrónico", error);
+});
+        
 </script>
 </body>
 </html>
