@@ -78,6 +78,39 @@
             cursor: pointer;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* Estilos para el cierre del modal */
+        .close {
+            color: #888;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
 
 .previsualizacion {
             margin-top: 30px;
@@ -226,8 +259,20 @@
                 <option value="Pack i-Sales Pro (2 Meses)">Pack i-Sales Pro (2 Meses)</option>
                 <option value="Publicidad Meta Ads / Google Ads">Publicidad Meta Ads / Google Ads</option>
             </select>
-            <button type="submit">Obtener Presupuesto</button>
+            <button type="submit" onclick="openModal()">Obtener Presupuesto</button>
         </form>
+         <div class="modal" id="myModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Solicitar Presupuesto</h2>
+                <p>Por favor, introduce tu nombre completo y número de teléfono para recibir tu presupuesto:</p>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <button type="submit" onclick="submitForm()">Enviar</button>
+            </div>
+        </div>
          <div class="previsualizacion">
             <div class="ejemplos-container">
                  <div class="ejemplo">
@@ -437,6 +482,32 @@
                 trabajo.textContent = "";
             }
         });
+
+
+
+         // Función para abrir el modal
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Función para enviar el formulario (puedes personalizar esto)
+        function submitForm() {
+            var nombre = document.getElementById("nombre").value;
+            var telefono = document.getElementById("telefono").value;
+
+            // Aquí puedes realizar cualquier acción que desees con los datos del formulario
+            // Por ejemplo, puedes enviar los datos a un servidor o procesarlos de alguna manera
+
+            // Después de procesar los datos, cierra el modal
+            closeModal();
+        }
 </script>
 </body>
 </html>
