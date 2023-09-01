@@ -469,111 +469,110 @@
     })();
 </script>
     <script type="module">
-      const explicacion = document.getElementById("explicacion");
+    const explicacion = document.getElementById("explicacion");
     const trabajo = document.getElementById("trabajo");
     const tipoServicio = document.getElementById("servicio");
     const presupuestadorForm = document.getElementById("presupuestadorForm");
     const closeModalButton = document.getElementById("closeModalButton");
     const closeModalSpan = document.getElementById("closeModal");
-    const modal = document.getElementById("myModal"); 
+    const modal = document.getElementById("myModal");
 
     tipoServicio.addEventListener("change", () => {
-    const selectedService = tipoServicio.value;
-    const servicioDiv = document.createElement("div");
-    servicioDiv.classList.add("servicio");
+        const selectedService = tipoServicio.value;
+        const servicioDiv = document.createElement("div");
+        servicioDiv.classList.add("servicio");
 
-    if (selectedService === "Landing Page (No code)") {
-        servicioDiv.innerHTML = `
-            <p>Descripción para Landing Page (No code).</p>
-        `;
-    } else if (selectedService === "Landing Page (Code)") {
-        servicioDiv.innerHTML = `
-            <p>Descripción para Landing Page (Code).</p>
-        `;
-    } else if (selectedService === "Botón de Chat con IA Standar") {
-        servicioDiv.innerHTML = `
-            <p>Descripción para Botón de Chat con IA Standar.</p>
-        `;
-    } else if (selectedService === "Botón de Chat con IA Standar + 1 Proceso automático") {
-        servicioDiv.innerHTML = `
-            <p>Descripción para Botón de Chat con IA Standar + 1 Proceso automático.</p>
-        `;
-    } else if (selectedService === "Pack i-Sales (2 Meses)") {
-        servicioDiv.innerHTML = `
-            <p>Nuestro Servicio va desde la generación de Clientes Potenciales al seguimiento de los Leads hasta convertirse en clientes.</p>
-            <p>Nuestro servicio es un servicio integral completo que incluye:</p>
-            <ul>
-                <li>Calendario de ventas semana a semana.</li>
-                <li>Flujos de ventas por cada canal.</li>
-                <li>Textos y ganchos desarrollados.</li>
-                <li>Set Up Publicitaria Facebook, Google o Linkedin.</li>
-                <li>Setup CRM.</li>
-                <li>Creación de creativos y copys.</li>
-                <li>Vídeos e imágenes para anuncios.</li>
-                <li>Seguimiento diario con el equipo comercial.</li>
-                <li>2 reuniones de status publicitario y cualificación del lead.</li>
-                <li>1 campaña de email marketing y flujo para exprimir la base de datos.</li>
-            </ul>
-            <h2>Precio <span id="precioServicio">997€ + IVA</span></h2>
-        `;
+        if (selectedService === "Landing Page (No code)") {
+            servicioDiv.innerHTML = `
+                <p>Descripción para Landing Page (No code).</p>
+            `;
+        } else if (selectedService === "Landing Page (Code)") {
+            servicioDiv.innerHTML = `
+                <p>Descripción para Landing Page (Code).</p>
+            `;
+        } else if (selectedService === "Botón de Chat con IA Standar") {
+            servicioDiv.innerHTML = `
+                <p>Descripción para Botón de Chat con IA Standar.</p>
+            `;
+        } else if (selectedService === "Botón de Chat con IA Standar + 1 Proceso automático") {
+            servicioDiv.innerHTML = `
+                <p>Descripción para Botón de Chat con IA Standar + 1 Proceso automático.</p>
+            `;
+        } else if (selectedService === "Pack i-Sales (2 Meses)") {
+            servicioDiv.innerHTML = `
+                <p>Nuestro Servicio va desde la generación de Clientes Potenciales al seguimiento de los Leads hasta convertirse en clientes.</p>
+                <p>Nuestro servicio es un servicio integral completo que incluye:</p>
+                <ul>
+                    <li>Calendario de ventas semana a semana.</li>
+                    <li>Flujos de ventas por cada canal.</li>
+                    <li>Textos y ganchos desarrollados.</li>
+                    <li>Set Up Publicitaria Facebook, Google o Linkedin.</li>
+                    <li>Setup CRM.</li>
+                    <li>Creación de creativos y copys.</li>
+                    <li>Vídeos e imágenes para anuncios.</li>
+                    <li>Seguimiento diario con el equipo comercial.</li>
+                    <li>2 reuniones de status publicitario y cualificación del lead.</li>
+                    <li>1 campaña de email marketing y flujo para exprimir la base de datos.</li>
+                </ul>
+                <h2>Precio <span id="precioServicio">997€ + IVA</span></h2>
+            `;
+        } else if (selectedService === "Pack i-Sales Pro (2 Meses)") {
+            servicioDiv.innerHTML = `
+                <p>Nuestro Servicio va desde la generación de Clientes Potenciales al seguimiento de los Leads hasta convertirse en clientes.</p>
+                <p>Nuestro servicio es un servicio integral completo que incluye:</p>
+                <ul>
+                    <li>Calendario de ventas semana a semana.</li>
+                    <li>Flujos de ventas por cada canal.</li>
+                    <li>Textos y ganchos desarrollados.</li>
+                    <li>Set Up Publicitaria Facebook, Google o Linkedin.</li>
+                    <li>Setup CRM.</li>
+                    <li>Creación de creativos y copys.</li>
+                    <li>Vídeos e imágenes para anuncios.</li>
+                    <li>Seguimiento diario con el equipo comercial.</li>
+                    <li>2 reuniones de status publicitario y cualificación del lead.</li>
+                    <li>1 campaña de email marketing y flujo para exprimir la base de datos.</li>
+                </ul>
+                <h2>Precio <span id="precioServicio">1475€ + IVA</span></h2>
+            `;
+        } else {
+            servicioDiv.innerHTML = "";
+        }
 
-     } else if (selectedService === "Pack i-Sales Pro (2 Meses)") {
-        servicioDiv.innerHTML = `
-            <p>Nuestro Servicio va desde la generación de Clientes Potenciales al seguimiento de los Leads hasta convertirse en clientes.</p>
-            <p>Nuestro servicio es un servicio integral completo que incluye:</p>
-            <ul>
-                <li>Calendario de ventas semana a semana.</li>
-                <li>Flujos de ventas por cada canal.</li>
-                <li>Textos y ganchos desarrollados.</li>
-                <li>Set Up Publicitaria Facebook, Google o Linkedin.</li>
-                <li>Setup CRM.</li>
-                <li>Creación de creativos y copys.</li>
-                <li>Vídeos e imágenes para anuncios.</li>
-                <li>Seguimiento diario con el equipo comercial.</li>
-                <li>2 reuniones de status publicitario y cualificación del lead.</li>
-                <li>1 campaña de email marketing y flujo para exprimir la base de datos.</li>
-            </ul>
-            <h2>Precio <span id="precioServicio">1475€ + IVA</span></h2>
-        `;
-    } else {
-        servicioDiv.innerHTML = "";
-    }
-
-    explicacion.innerHTML = "";
-    explicacion.appendChild(servicioDiv);
-});
-
+        explicacion.innerHTML = "";
+        explicacion.appendChild(servicioDiv);
     });
-         nicho.addEventListener("change", () => {
-            if (nicho.value === "Belleza B2B") {
-                trabajo.textContent = "El sector de la belleza es un sector muy competitivo. Si vendes productos a Centros Estéticos estás de suerte porque es un sector que en B2B no está bien explota y puedes conseguir Costes por Cliente Potencial de 2€ , Como nuestro Cliente Preso Vital que consiguió 300 Leads por un coste total de 600€, para vender un producto de neuro estimulación facial de ticket de 5000€. ";
-            } else if (nicho.value === "Belleza B2C") {
-                trabajo.textContent = "Forma de trabajo para Belleza B2C";
-            } else if (nicho.value === "Energía B2B") {
-                trabajo.textContent = "Forma de trabajo para Energía B2B";
-            } else if (nicho.value === "Energía B2C") {
-                trabajo.textContent = "Forma de trabajo para Energía B2C";
-            } else if (nicho.value === "Servicios Informáticos B2B") {
-                trabajo.textContent = "Forma de trabajo para Servicios Informáticos B2B";
-            } else if (nicho.value === "Infoproducto") {
-                trabajo.textContent = "Forma de trabajo para Infoproducto";
-            } else if (nicho.value === "Tours") {
-                trabajo.textContent = "Forma de trabajo para Tours";
-            } else if (nicho.value === "Clínicas Dentales") {
-                trabajo.textContent = "Forma de trabajo para Clínicas Dentales";
-            } else if (nicho.value === "Agencia de Viajes") {
-                trabajo.textContent = "Forma de trabajo para Agencia de Viajes";
-            } else if (nicho.value === "Reparación e Instalación") {
-                trabajo.textContent = "Forma de trabajo para Reparación e Instalación";
-            } else if (nicho.value === "Mudanzas") {
-                trabajo.textContent = "Forma de trabajo para Mudanzas";
-            } else if (nicho.value === "Inmobiliaria") {
-                trabajo.textContent = "Forma de trabajo para Inmobiliaria";
-            } else {
-                trabajo.textContent = "";
-            }
-        });
-            document.getElementById("obtenerPresupuestoButton").addEventListener("click", function(event) {
+
+    nicho.addEventListener("change", () => {
+        if (nicho.value === "Belleza B2B") {
+            trabajo.textContent = "El sector de la belleza es un sector muy competitivo. Si vendes productos a Centros Estéticos estás de suerte porque es un sector que en B2B no está bien explotado y puedes conseguir Costes por Cliente Potencial de 2€, como nuestro Cliente Preso Vital que consiguió 300 Leads por un coste total de 600€, para vender un producto de neuro estimulación facial de ticket de 5000€.";
+        } else if (nicho.value === "Belleza B2C") {
+            trabajo.textContent = "Forma de trabajo para Belleza B2C";
+        } else if (nicho.value === "Energía B2B") {
+            trabajo.textContent = "Forma de trabajo para Energía B2B";
+        } else if (nicho.value === "Energía B2C") {
+            trabajo.textContent = "Forma de trabajo para Energía B2C";
+        } else if (nicho.value === "Servicios Informáticos B2B") {
+            trabajo.textContent = "Forma de trabajo para Servicios Informáticos B2B";
+        } else if (nicho.value === "Infoproducto") {
+            trabajo.textContent = "Forma de trabajo para Infoproducto";
+        } else if (nicho.value === "Tours") {
+            trabajo.textContent = "Forma de trabajo para Tours";
+        } else if (nicho.value === "Clínicas Dentales") {
+            trabajo.textContent = "Forma de trabajo para Clínicas Dentales";
+        } else if (nicho.value === "Agencia de Viajes") {
+            trabajo.textContent = "Forma de trabajo para Agencia de Viajes";
+        } else if (nicho.value === "Reparación e Instalación") {
+            trabajo.textContent = "Forma de trabajo para Reparación e Instalación";
+        } else if (nicho.value === "Mudanzas") {
+            trabajo.textContent = "Forma de trabajo para Mudanzas";
+        } else if (nicho.value === "Inmobiliaria") {
+            trabajo.textContent = "Forma de trabajo para Inmobiliaria";
+        } else {
+            trabajo.textContent = "";
+        }
+    });
+
+    document.getElementById("obtenerPresupuestoButton").addEventListener("click", function(event) {
         event.preventDefault();
         openModal();
     });
@@ -608,7 +607,7 @@
         modal.style.display = "none";
         presupuestadorForm.reset();
     }
-     
 </script>
+
 </body>
 </html>
