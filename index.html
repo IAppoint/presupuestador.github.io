@@ -561,34 +561,28 @@
 }
 
 
+// Agregamos un manejador de eventos para el formulario
+document.getElementById("closeModalButton").addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    var nombre = document.getElementById("nombre").value;
+    var telefono = document.getElementById("telefono").value;
+
+    // Enviar el formulario por correo electrónico usando EmailJS
+    emailjs.send("service_2b9m5ed", "template_bku9ps9", {
+        nombre: nombre,
+        telefono: telefono,
+    })
+    .then(function(response) {
+        console.log("Correo electrónico enviado con éxito", response);
+
+        // Cerrar el modal después de que se haya enviado el correo
+        closeModal();
+    }, function(error) {
+        console.error("Error al enviar el correo electrónico", error);
+    });
+});
      
-
- // Agregamos un manejador de eventos para el botón de cierre del modal
-        const closeModalButton = document.getElementById("closeModalButton");
-        closeModalButton.addEventListener("click", closeModal);
-
-        // Agregamos un manejador de eventos para el formulario
-        document.getElementById("presupuestadorForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            var nombre = document.getElementById("nombre").value;
-            var telefono = document.getElementById("telefono").value;
-
-               // Enviar el formulario por correo electrónico usando EmailJS
-            emailjs.send("service_2b9m5ed", "template_bku9ps9", {
-                nombre: nombre,
-                telefono: telefono,
-            })
-            .then(function(response) {
-                console.log("Correo electrónico enviado con éxito", response);
-            }, function(error) {
-                console.error("Error al enviar el correo electrónico", error);
-            });
-
-            closeModal();
-        });
-        
 </script>
 </body>
 </html>
