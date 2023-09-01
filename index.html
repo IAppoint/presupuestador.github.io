@@ -543,45 +543,40 @@
             }
         });
             document.getElementById("obtenerPresupuestoButton").addEventListener("click", function(event) {
-            event.preventDefault(); // Evitar que el formulario se envíe normalmente
-        
-            // Llamar a la función openModal
-            openModal();
-        });
-
-
-          function openModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "block";
-        }
-
-      function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-
-// Agregamos un manejador de eventos para el formulario
-document.getElementById("closeModalButton").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    var nombre = document.getElementById("nombre").value;
-    var telefono = document.getElementById("telefono").value;
-
-    // Enviar el formulario por correo electrónico usando EmailJS
-    emailjs.send("service_2b9m5ed", "template_bku9ps9", {
-        nombre: nombre,
-        telefono: telefono,
-    })
-    .then(function(response) {
-        console.log("Correo electrónico enviado con éxito", response);
-
-        // Cerrar el modal después de que se haya enviado el correo
-        closeModal();
-    }, function(error) {
-        console.error("Error al enviar el correo electrónico", error);
+        event.preventDefault();
+        openModal();
     });
-});
+
+    closeModalSpan.addEventListener("click", function() {
+        closeModal();
+    });
+
+    closeModalButton.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        var nombre = document.getElementById("nombre").value;
+        var telefono = document.getElementById("telefono").value;
+
+        emailjs.send("service_2b9m5ed", "template_bku9ps9", {
+            nombre: nombre,
+            telefono: telefono,
+        })
+        .then(function(response) {
+            console.log("Correo electrónico enviado con éxito", response);
+            closeModal();
+        }, function(error) {
+            console.error("Error al enviar el correo electrónico", error);
+        });
+    });
+
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        presupuestadorForm.reset();
+    }
      
 </script>
 </body>
