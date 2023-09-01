@@ -259,7 +259,7 @@
                 <option value="Pack i-Sales Pro (2 Meses)">Pack i-Sales Pro (2 Meses)</option>
                 <option value="Publicidad Meta Ads / Google Ads">Publicidad Meta Ads / Google Ads</option>
             </select>
-            <button type="submit" onclick="openModal()">Obtener Presupuesto</button>
+            <button type="submit" id="obtenerPresupuestoButton">Obtener Presupuesto</button>
         </form>
          <div class="modal" id="myModal">
             <div class="modal-content">
@@ -482,7 +482,12 @@
                 trabajo.textContent = "";
             }
         });
-
+            document.getElementById("obtenerPresupuestoButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe normalmente
+        
+            // Llamar a la función openModal
+            openModal();
+        });
 
 
           function openModal() {
